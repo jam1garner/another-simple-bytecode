@@ -1,0 +1,16 @@
+push 68 ;D
+push 76 ;L
+push 82 ;R
+push 79 ;O
+push 87 ;W
+push 32 ;
+push 79 ;O
+push 76 ;L
+push 76 ;L
+push 69 ;E
+push 72 ;H
+lc r0,11;Load constant 11 into register r0 (this is our char[] length)
+inc 1   ;Increment counter register by 1 (this keeps track of how far we are into the string)
+sys 1   ;Pop the character off the top of the stack and print it
+cmp r0,c;Compare counter (how far we are through the string) with r0 (our char[] length)
+big 13  ;Branch to line 13 (the inc) if r0 > c (if we haven't reached the end of our string)

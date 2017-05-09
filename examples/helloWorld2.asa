@@ -1,0 +1,13 @@
+push 0  ;terminator
+push 68 ;D
+push 76 ;L
+push 82 ;R
+push 79 ;O
+push 87 ;W
+push 32 ;
+push 79 ;O
+push 76 ;L
+push 76 ;L
+push 69 ;E
+push 72 ;H
+sys 4   ;print string

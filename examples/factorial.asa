@@ -1,0 +1,32 @@
+push 0     ;terminator "Input A:"
+push 32    ;[space]
+push 58    ;[colon]
+push 65    ;A
+push 32    ;[space]
+push 116   ;t
+push 117   ;u
+push 112   ;p
+push 110   ;n
+push 73    ;I
+sys 4      ;print string
+sys 2      ;input value and push to stack
+pop r0     ;pop value to r0
+lc r1,1    ;r1 = 1 (r1 will store our answer)
+lc r2,2    ;r2 = 2 (if counter drops below this, we don't need/want to multiply by it anymore)
+copy r0,c  ;copy r0 to the counter, which we'll use to loop for multiplying by every value
+cmp c,r2   ;if c < 2
+bil 23     ;print result
+mult c,r1  ;multiply r1 by counter
+copy acc,r1;and store the result in r1
+dec 1      ;decrement counter by 1
+b 17       ;restart loop
+push 0     ;terminator "\nA! = "
+push 32    ;[space]
+push 61    ;[equals]
+push 32    ;[space]
+push 33    ;[exclamation mark]
+push 65    ;A
+push 10    ;new line
+sys 4      ;print "\nA! = "
+push r1    ;push answer into stack
+sys 0      ;print answer

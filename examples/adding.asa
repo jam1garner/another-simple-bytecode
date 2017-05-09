@@ -1,0 +1,33 @@
+push 0    ;terminator "Input A:"
+push 32   ;[space]
+push 58   ;[colon]
+push 65   ;A
+push 32   ;[space]
+push 116  ;t
+push 117  ;u
+push 112  ;p
+push 110  ;n
+push 73   ;I
+sys 4     ;print string
+sys 2     ;input value and push to stack
+pop r0    ;pop value to r0
+push 10   ;new line
+sys 1     ;print character
+push 0    ;terminator "Input B:"
+push 32   ;[space]
+push 58   ;[colon]
+push 66   ;B
+push 32   ;[space]
+push 116  ;t
+push 117  ;u
+push 112  ;p
+push 110  ;n
+push 73   ;I
+sys 4     ;print string
+sys 2     ;input value and push to stack
+pop r1    ;pop value to r1
+push 10   ;new line
+sys 1     ;print character
+add r0,r1 ;add the registers
+push acc  ;push result into stack
+sys 0     ;print result
